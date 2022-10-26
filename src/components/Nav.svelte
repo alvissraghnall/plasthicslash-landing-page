@@ -1,78 +1,4 @@
-<script lang="ts">
-	export let segment: string;
-	let overlayEl;
-	let mobileMenuEl;
-
-	function closeOverlay () {
-		// overlayEl.style.height = "0%";
-		overlayEl.classList.remove("w-0", "h-0", "opacity-0");
-		overlayEl.classList.add("w-screen", "h-screen", "opacity-95");
-	}
-
-	function openOverlay () {
-		mobileMenuEl.classList.toggle("hidden");
-		// overlayEl.style.height = "100%";
-		overlayEl.classList.add("w-0", "h-0", "opacity-0");
-		overlayEl.classList.remove("w-screen", "h-screen", "opacity-95");
-	}	
-</script>
-
-<style>
-/*
-	.overlay-nav {
-		height: 100vh;
-		width: 0;
-		position: fixed;
-		z-index: 1;
-		left: 0;
-		top: 0;
-		background-color: rgb(0, 0, 0);
-		background-color: rgba(0, 0, 0, .9);
-		overflow-x: hidden;
-		transition: .5s;
-	}
-
-	.overlay-nav-content {
-		position: relative;
-		top: 25%;
-		width: 100%;
-		text-align: center;
-		margin-top: 30px;
-	}
-
-	.overlay-nav a {
-		padding: 8px;
-		text-decoration: none;
-		font-size: 36px;
-		color: #818181;
-		display: block;
-		transition: .3s;
-	}
-
-	.overlay-nav a:hover, .overlay-nav a:focus {
-		color: #f1f1f1;
-	}
-
-	.overlay-nav .close-overlay {
-		position: absolute;
-		top: 20px;
-		right: 45px;
-		font-size: 60px;
-	} 
-
-	@media screen and (max-height: 450px) {
-		.overlay-nav a { font-size: 20px; }
-		.overlay-nav .close-overlay {
-			font-size: 40px;
-			top: 15px;
-			right: 35px;
-		}
-	}
-	*/
-	
-</style>
-
-<nav class="bg-white shadow-lg">
+<!--<nav class="bg-white shadow-lg">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="flex justify-between">
 			<div class="flex space-x-7">
@@ -117,4 +43,54 @@
 			</div>
 		</div>
 	</div>
+</nav> -->
+
+<script>
+	let hiddenEl;
+	function openButton () {
+		hiddenEl.classList.toggle("hidden");
+	}
+</script>
+
+
+<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <a href="/" class="flex items-center">
+        <!-- <img src="" class="mr-3 h-6 sm:h-9" alt=""> -->
+        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> PlasthicSlash </span>
+    </a>
+    <button on:click={openButton} data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+    </button>
+    <div bind:this={hiddenEl} class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <li>
+          	<a href="#" class="font-semibold hover:text-purple-500 transition duration-300 block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">
+				Home
+			</a>
+        </li>
+        <li>
+          	<a href="about" class="nav-elements">
+				About
+			</a>
+        </li>
+        <li>
+          	<a href="discography" class="nav-elements">
+				Discography
+			</a>
+        </li>
+        <li>
+          	<a href="news" class="nav-elements">
+				News
+			</a>
+        </li>
+        <li>
+          	<a href="contact" class="nav-elements">
+				Contact
+			</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>

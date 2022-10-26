@@ -1,6 +1,7 @@
 {
   "name": "slyme",
   "description": "TODO",
+  "license": "MIT",
   "version": "0.0.1",
   "scripts": {
     "tw": "npx tailwindcss -i ./src/main.css -o ./static/second.css --watch",

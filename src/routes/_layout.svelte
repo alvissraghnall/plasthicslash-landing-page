@@ -20,6 +20,6 @@
 
 <Nav {segment}/>
 
-<main>
+<main class="w-screen flex flex-wrap text-center">
 	<slot></slot>
 </main>
